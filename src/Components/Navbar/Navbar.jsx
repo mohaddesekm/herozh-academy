@@ -1,5 +1,137 @@
+import { Link } from 'react-router';
+import './Navbar.css';
+
 export default function Navbar() {
-  return (
-    <div>Navbar</div>
-  )
+    return (
+        <div className="Navbar">
+            <div className="container">
+                <nav className="menu">
+                    <div className="menu__logo">
+                        <img src="/images/logo-1.png" alt="logo" />
+                    </div>
+                    <div className="menu__details">
+                        <div className="menu__right">
+                            <p>
+                                <span className="menu__icon">
+                                    <i class="fa fa-bars"></i>
+                                </span>
+                                دسته بندی ها
+                            </p>
+                            <ul className="menu__category--subMenu-list">
+                                <li className="menu__category-subMeny-item subMenu__item">
+                                    <a href="#">
+                                        <span>چند رسانه ای</span>
+                                        <i className="fa fa-arrow-left"></i>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="">انیمیشن و سه بعدی</a>
+                                        </li>
+                                        <li>
+                                            <a href="">فیلم صدا</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li className="menu__category-subMeny-item">
+                                    <a href="#">زبان خارجی</a>
+                                </li>
+                                <li className="menu__category-subMeny-item">
+                                    <a href="#">سبک زندگی</a>
+                                </li>
+                                <li className="menu__category-subMeny-item">
+                                    <a href="#">طراحی</a>
+                                </li>
+                                <li className="menu__category-subMeny-item subMenu__item">
+                                    <a href="#" className="">
+                                        <span>فناوری اطلاعات</span>
+                                        <i className="fa fa-arrow-left"></i>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="">برنامه نویسی</a>
+                                        </li>
+                                        <li>
+                                            <a href="">شبکه و امنیت</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li className="menu__category-subMeny-item">
+                                    <a href="#">کسب کار</a>
+                                </li>
+                            </ul>
+                            <div className="menu__logo">
+                                <img src="assest/images/logo-1.png" alt="" />
+                            </div>
+                        </div>
+                        <div className="menu__left">
+                            <ul className="menu__list">
+                                <li>
+                                    <Link to="/">صفحه اصلی</Link>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>دوره ها</span>
+                                        <span>
+                                            <i className="fa fa-arrow-down"></i>
+                                        </span>
+                                    </a>
+                                    <ul className="">
+                                        <li>
+                                            <Link to="cart">سبد خرید</Link>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>صفحات</span>
+                                        <span>
+                                            <i className="fa fa-arrow-down"></i>
+                                        </span>
+                                    </a>
+                                    <ul className="">
+                                        <li>
+                                            <Link to="blog">بلاگ</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="courses">دوره ها</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="product">محصول</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="article">
+                                                جزئیات مقاله
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div className="menu__basket-search">
+                                <div className="menu__search">
+                                    <a href="#">
+                                        <i className="fa fa-search"></i>
+                                    </a>
+                                </div>
+                                <div className="menu__basket">
+                                    <a href="#">
+                                        <i className="fa fa-shopping-bag"></i>
+                                        <span>0</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="menu__login-submit">
+                                <a href="#">
+                                    <i className="fas fa-arrow-left"></i>
+
+                                    <span>ورود</span>
+                                    <span>/</span>
+                                    <span>ثبت نام</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    );
 }

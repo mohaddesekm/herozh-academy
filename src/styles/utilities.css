@@ -1,7 +1,6 @@
-.u-container {
+.container {
     margin: 0 auto;
-    width: 85%;
-    height: 100%;
+    max-width: 90%;
 }
 
 .u-title {
