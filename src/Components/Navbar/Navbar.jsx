@@ -1,21 +1,41 @@
 import { Link } from 'react-router';
 import './Navbar.css';
+import MobileMenu from '../MobileMenu/MobileMenu';
+import { useState } from 'react';
 
 export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const menuMobile = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
+
     return (
         <div className="Navbar">
+            <MobileMenu
+                className={isOpen ? 'mobile-open' : 'mobile-close'}
+                onClose={closeMenu}
+            />
+
             <div className="container">
                 <nav className="menu">
-                    <div className="menu__logo">
+                    <div className="menu__logo-1">
                         <img src="/images/logo-1.png" alt="logo" />
                     </div>
                     <div className="menu__details">
                         <div className="menu__right">
                             <p>
-                                <span className="menu__icon">
+                                <span
+                                    className="menu__icon"
+                                    onClick={menuMobile}
+                                >
                                     <i class="fa fa-bars"></i>
                                 </span>
-                                دسته بندی ها
+                                <span className="menu__p">دسته بندی ها</span>
                             </p>
                             <ul className="menu__category--subMenu-list">
                                 <li className="menu__category-subMeny-item subMenu__item">
@@ -59,8 +79,8 @@ export default function Navbar() {
                                     <a href="#">کسب کار</a>
                                 </li>
                             </ul>
-                            <div className="menu__logo">
-                                <img src="assest/images/logo-1.png" alt="" />
+                            <div className="menu__logo-2">
+                                <img src="/images/logo-1.png" alt="" />
                             </div>
                         </div>
                         <div className="menu__left">
