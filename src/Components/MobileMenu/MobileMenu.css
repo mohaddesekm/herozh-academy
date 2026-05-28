@@ -11,10 +11,12 @@
 }
 
 .menu-mobile.mobile-open {
+    opacity: 1;
     left: 0;
 }
+
 .menu-mobile.mobile-close {
-    left: -400px;
+    opacity: 0;
 }
 
 .icon__close {
