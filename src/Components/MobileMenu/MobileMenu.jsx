@@ -1,19 +1,18 @@
 import './MobileMenu.css';
+import { Link } from 'react-router';
 
-export default function MobileMenu({ className,onClose }) {
-
-
+export default function MobileMenu({ className, onClose }) {
     return (
         <div>
-            <aside class={`menu-mobile ${className}`}>
-                <div class="icon__close" onClick={onClose}>
+            <aside className={`menu-mobile ${className}`}>
+                <div className="icon__close-mobile" onClick={onClose}>
                     <span>
-                        <i class="fa fa-times-circle"></i>
+                        <i className="fa fa-times-circle"></i>
                     </span>
                 </div>
-                <div class="menu-mobile__wrapper">
-                    <div class="menu-mobile__content">
-                        <div class="menu-mobile__search">
+                <div className="menu-mobile__wrapper">
+                    <div className="menu-mobile__content">
+                        <div className="menu-mobile__search">
                             <input
                                 type="text"
                                 name=""
@@ -21,57 +20,45 @@ export default function MobileMenu({ className,onClose }) {
                                 placeholder="جستجو کنید ..."
                             />
                             <span>
-                                <i class="fa fa-search"></i>
+                                <i className="fa fa-search"></i>
                             </span>
                         </div>
-                        <ul class="menu-mobile__list">
-                            <li class="menu-mobile__item">
-                                <a href="index.html" class="menu-mobile__link">
-                                    <span>صفحه اصلی</span>
-                                </a>
+                        <ul className="menu-mobile__list">
+                            <li className="menu-mobile__item menu-mobile__title">
+                                <Link to="/">صفحه اصلی</Link>
                             </li>
-                            <li class="menu-mobile__item parent-item-submenu">
-                                <a href="#" class="menu-mobile__link">
+                            <li className="menu-mobile__item parent-item-submenu">
+                                <a href="#" className="menu-mobile__link">
                                     <span>دوره ها</span>
                                     <span>
-                                        <i class="fa fa-arrow-down"></i>
+                                        <i className="fa fa-arrow-down"></i>
                                     </span>
                                 </a>
-                                <ul class="menu-mobile__submenu--list">
-                                    <li class="menu-mobile__submenu--item">
-                                        <a href="cart.html" class="">
-                                            سبد خرید
-                                        </a>
+                                <ul className="menu-mobile__submenu--list">
+                                    <li className="menu-mobile__submenu--item">
+                                        <Link to="cart">سبد خرید</Link>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="menu-mobile__item parent-item-submenu">
-                                <a href="#" class="menu-mobile__link">
+                            <li className="menu-mobile__item parent-item-submenu">
+                                <a href="#" className="menu-mobile__link">
                                     <span>صفحات</span>
                                     <span>
-                                        <i class="fa fa-arrow-down"></i>
+                                        <i className="fa fa-arrow-down"></i>
                                     </span>
                                 </a>
-                                <ul class="menu-mobile__submenu--list">
-                                    <li class="menu-mobile__submenu--item">
-                                        <a href="blog.html" class="">
-                                            بلاگ
-                                        </a>
+                                <ul className="menu-mobile__submenu--list">
+                                    <li className="menu-mobile__submenu--item">
+                                        <Link to="blog">بلاگ</Link>
                                     </li>
-                                    <li class="menu-mobile__submenu--item">
-                                        <a href="product.html" class="">
-                                            محصول
-                                        </a>
+                                    <li className="menu-mobile__submenu--item">
+                                        <Link to="product">محصول</Link>
                                     </li>
-                                    <li class="menu-mobile__submenu--item">
-                                        <a href="courses.html" class="">
-                                            محصولات
-                                        </a>
+                                    <li className="menu-mobile__submenu--item">
+                                        <Link to="courses">دوره ها</Link>
                                     </li>
-                                    <li class="menu-mobile__submenu--item">
-                                        <a href="article.html" class="">
-                                            جزئیات مقاله
-                                        </a>
+                                    <li className="menu-mobile__submenu--item">
+                                        <Link to="article">جزئیات مقاله</Link>
                                     </li>
                                 </ul>
                             </li>

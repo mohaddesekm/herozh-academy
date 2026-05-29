@@ -2,9 +2,11 @@ import { Link } from 'react-router';
 import './Navbar.css';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import { useState } from 'react';
+import BasketMenu from '../BasketMenu/BasketMenu';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpenBasket, setIsOpenBasket] = useState(false);
 
     const menuMobile = () => {
         setIsOpen(!isOpen);
@@ -14,11 +16,25 @@ export default function Navbar() {
         setIsOpen(false);
     };
 
+    const menuBasket = (e) => {
+        e.preventDefault();
+        setIsOpenBasket(!isOpenBasket);
+    };
+
+    const onCloseBasket = () => {
+        setIsOpenBasket(false);
+    };
+
     return (
         <div className="Navbar">
             <MobileMenu
                 className={isOpen ? 'mobile-open' : 'mobile-close'}
                 onClose={closeMenu}
+            />
+
+            <BasketMenu
+                className={isOpenBasket ? 'active' : 'close'}
+                onClose={onCloseBasket}
             />
 
             <div className="container">
@@ -33,7 +49,7 @@ export default function Navbar() {
                                     className="menu__icon"
                                     onClick={menuMobile}
                                 >
-                                    <i class="fa fa-bars"></i>
+                                    <i className="fa fa-bars"></i>
                                 </span>
                                 <span className="menu__p">دسته بندی ها</span>
                             </p>
@@ -89,13 +105,13 @@ export default function Navbar() {
                                     <Link to="/">صفحه اصلی</Link>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a>
                                         <span>دوره ها</span>
                                         <span>
                                             <i className="fa fa-arrow-down"></i>
                                         </span>
                                     </a>
-                                    <ul className="">
+                                    <ul>
                                         <li>
                                             <Link to="cart">سبد خرید</Link>
                                         </li>
@@ -132,7 +148,10 @@ export default function Navbar() {
                                         <i className="fa fa-search"></i>
                                     </a>
                                 </div>
-                                <div className="menu__basket">
+                                <div
+                                    className="menu__basket"
+                                    onClick={menuBasket}
+                                >
                                     <a href="#">
                                         <i className="fa fa-shopping-bag"></i>
                                         <span>0</span>
